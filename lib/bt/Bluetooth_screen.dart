@@ -1,7 +1,11 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
-import 'package:implulsnew/bt/widgets.dart';
+import 'package:implulsnew/bt/characteristic_tile.dart';
+import 'package:implulsnew/bt/descriptor_tile.dart';
+import 'package:implulsnew/bt/scan_result_tile.dart';
+import 'package:implulsnew/bt/service_tile.dart';
 
 const String ekg_UUID = "00b3b2ae-928b-11e9-bc42-526af7764f64";
 
