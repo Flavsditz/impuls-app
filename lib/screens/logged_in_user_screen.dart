@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import 'package:implulsnew/bt/Bluetooth_screen.dart';
-import 'package:provider/provider.dart';
+import 'package:implulsnew/bt/discovery/bluetooth_discovery.dart';
 import 'package:implulsnew/model/user_repository.dart';
-import 'package:implulsnew/screens/login_screen.dart';
 import 'package:implulsnew/screens/choose_patient_screen.dart';
+import 'package:implulsnew/screens/login_screen.dart';
 import 'package:implulsnew/styles/button.dart';
+import 'package:provider/provider.dart';
 
 class Logo extends StatelessWidget {
   @override
@@ -24,7 +23,8 @@ class Logo extends StatelessWidget {
             case Status.Authenticated:
               return UserInfoPage(user: user.user);
           }
-          return null;},
+          return null;
+        },
       ),
     );
   }
@@ -37,9 +37,10 @@ class UserInfoPage extends StatelessWidget {
       context, MaterialPageRoute(builder: (context) => ChoosePatientWidget()));
 
   void onButtonsConnectPressed(BuildContext context) => Navigator.push(
-      context, MaterialPageRoute(builder: (context) => FlutterBlueApp()));
+      context, MaterialPageRoute(builder: (context) => BluetoothDiscovery()));
 
   const UserInfoPage({Key key, this.user}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +84,8 @@ class UserInfoPage extends StatelessWidget {
             ),
             RaisedButton(
               child: Text("All DONE and SIGN OUT"),
-              onPressed: () => Provider.of<UserRepository>(context, listen: false).signOut(),
+              onPressed: () =>
+                  Provider.of<UserRepository>(context, listen: false).signOut(),
             )
           ],
         ),
@@ -102,4 +104,3 @@ class Splash extends StatelessWidget {
     );
   }
 }
-

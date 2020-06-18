@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:implulsnew/screens/logged_in_user_screen.dart';
+import 'package:implulsnew/bt/discovery/bluetooth_discovery.dart';
 import 'package:logger/logger.dart';
 
 void main() {
@@ -44,8 +44,8 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  void onLogoPressed(BuildContext context) =>
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Logo()));
+  void onLogoPressed(BuildContext context) => Navigator.push(
+      context, MaterialPageRoute(builder: (context) => BluetoothDiscovery()));
 
   @override
   Widget build(BuildContext context) {

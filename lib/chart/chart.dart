@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:implulsnew/bt/medical_data.dart';
+import 'package:implulsnew/chart/medical_data.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Chart extends StatefulWidget {
@@ -20,8 +20,6 @@ class _ChartState extends State<Chart> {
   Widget build(BuildContext context) {
     return SfCartesianChart(
       legend: Legend(isVisible: true),
-//      zoomPanBehavior:
-//          ZoomPanBehavior(enablePinching: true, enablePanning: true),
       primaryXAxis: DateTimeAxis(majorGridLines: MajorGridLines(width: 0)),
       series: <ChartSeries<MedicalData, DateTime>>[
         LineSeries<MedicalData, DateTime>(
